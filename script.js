@@ -29,3 +29,17 @@ add_item.addEventListener("click", (event) => {
 		window.location.reload();
 	}
 });
+
+// i should probably check service workers are available, but who cares.
+if ("serviceWorker" in navigator) {
+	navigator.serviceWorker.register("service.js").then(
+		(registration) => {
+			console.log(`Registration worked: ${registration}`);
+		},
+		(error) => {
+			console.error(`Registration failed: ${error}`);
+		}
+	)
+} else {
+	alert("Service Workers are not supported here. The app won't work offline.");
+}
