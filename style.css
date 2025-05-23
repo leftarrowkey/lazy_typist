@@ -1,0 +1,9 @@
+.item {
+	grid-template-columns: auto 1fr auto;
+	display: grid;
+	margin-block: 0.2em;
+}
+
+.item > div {
+	padding-inline: 1em;
+}
